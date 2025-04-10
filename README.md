@@ -35,7 +35,7 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 ---
 
 ### 🗃️ Base de données :
-- **MySQL** – Stockage des données (offres, utilisateurs, candidatures, entreprises...).
+- **MySQL** – Système de gestion de base de données relationnelle pour stocker les données (offres, utilisateurs, candidatures, entreprises...).
 
 
 ## 🧩 5. Diagramme de classes (UML) :
