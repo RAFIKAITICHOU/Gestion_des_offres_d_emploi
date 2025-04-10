@@ -34,17 +34,14 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 
 ## 🧩 5. Diagramme de classes (UML) :
 
-![Diagramme de classes](https://github.com/user-attachments/assets/your_class_diagram_url_here)
+![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/class%20dig.png)
 
-## 🗺️ 6. Modèle conceptuel de données (MCD) :
+## 🗺️ 6.  Modèle conceptuel de la base généré :
 
-![Modèle conceptuel](https://github.com/user-attachments/assets/your_mcd_url_here)
+![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/db.png)
 
-## 📈 7. Statistiques de candidatures :
 
-![Statistiques Chart.js](https://github.com/user-attachments/assets/your_chart_url_here)
+## 🧪 7. Exécution des tests (console/logs) :
 
-## 🧪 8. Exécution des tests (console/logs) :
-
-![Console 1](https://github.com/user-attachments/assets/test_console_1.png)
-![Console 2](https://github.com/user-attachments/assets/test_console_2.png)
+![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/Capture1.png)
+![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/Capture2.png)
