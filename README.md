@@ -2,6 +2,7 @@
 <p align="center">
   <img src="Images/logo.jpg" alt="Logo de l'application" width="600">
 </p>
+
 ## 📘 1. Contexte :  
 Ce projet est une application web de gestion des offres d’emploi, permettant aux entreprises de publier des offres, aux candidats de postuler, et aux administrateurs de visualiser les statistiques de candidatures.  
 Il vise à faciliter le processus de recrutement à travers une plateforme simple, interactive et efficace.
