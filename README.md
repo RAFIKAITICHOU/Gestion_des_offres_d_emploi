@@ -32,6 +32,8 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 - **JPA (Java Persistence API)** – Interface standard pour travailler avec Hibernate.
 - **JDBC (optionnel)** – Utilisé en complément si nécessaire pour des requêtes spécifiques.
 
+---
+
 ### 🗃️ Base de données :
 - **MySQL** – Stockage des données (offres, utilisateurs, candidatures, entreprises...).
 
@@ -81,6 +83,8 @@ CREATE TABLE Candidature (
     FOREIGN KEY (user_id) REFERENCES User(id)
 );
 ```
+---
+
 
 ## 🧩 5. Diagramme de classes (UML) :
 
