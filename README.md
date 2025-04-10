@@ -37,54 +37,6 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 ### 🗃️ Base de données :
 - **MySQL** – Stockage des données (offres, utilisateurs, candidatures, entreprises...).
 
-  ```sql
-CREATE TABLE User (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(100),
-    email VARCHAR(150),
-    motDePasse VARCHAR(100)
-);
-
-CREATE TABLE Candidat (
-    id INT PRIMARY KEY,
-    telephone VARCHAR(20),
-    FOREIGN KEY (id) REFERENCES User(id)
-);
-
-CREATE TABLE Admin (
-    id INT PRIMARY KEY,
-    matricule VARCHAR(100),
-    FOREIGN KEY (id) REFERENCES User(id)
-);
-
-CREATE TABLE Entreprise (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(100),
-    secteur VARCHAR(100)
-);
-
-CREATE TABLE Offre (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    titre VARCHAR(150),
-    description TEXT,
-    salaire DOUBLE,
-    typeContrat VARCHAR(50),
-    entreprise_id INT,
-    FOREIGN KEY (entreprise_id) REFERENCES Entreprise(id)
-);
-
-CREATE TABLE Candidature (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    offre_id INT,
-    user_id INT,
-    date DATETIME,
-    cvPath VARCHAR(255),
-    FOREIGN KEY (offre_id) REFERENCES Offre(id),
-    FOREIGN KEY (user_id) REFERENCES User(id)
-);
-```
----
-
 
 ## 🧩 5. Diagramme de classes (UML) :
 
