@@ -40,14 +40,51 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 
 ## 🧩 5. Diagramme de classes (UML) :
 
-![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/class%20dig.png)
-
+<p align="center">
+  <img src="Images/class%20dig.png" alt=" " width="400">
+</p>
 ## 🗺️ 6.  Modèle conceptuel de la base généré :
 
-![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/db.png)
+<p align="center">
+  <img src="Images/db.png" alt=" " width="400">
+</p>
 
 
 ## 🧪 7. Exécution des tests (console/logs) :
 
-![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/Capture1.png)
-![image](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/Images/Capture2.png)
+<p align="center">
+  <img src="Images/Capture1.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture2.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture3.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture4.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture5.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture6.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture7.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture8.png" alt=" " width="400">
+</p>
+
+<p align="center">
+  <img src="Images/Capture9.png" alt=" " width="400">
+</p>
+
