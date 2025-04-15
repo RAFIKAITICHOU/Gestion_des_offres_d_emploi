@@ -1,6 +1,6 @@
 # 💼 Gestion des offres d'emploi
 <p align="center">
-  <img src="Images/logo.jpg" alt="Logo de l'application" width="600">
+  <img src="Images/logo.jpg" alt="Logo de l'application" width="300">
 </p>
 
 ## 📘 1. Contexte :  
