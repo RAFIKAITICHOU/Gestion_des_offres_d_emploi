@@ -21,7 +21,7 @@ public class Entreprise {
     private String nom;
     private String secteur;
 
-    @OneToMany(mappedBy = "entreprise", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "entreprise", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Offre> offres;
 
     public Entreprise() {

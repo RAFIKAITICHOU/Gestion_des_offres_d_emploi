@@ -94,7 +94,7 @@ public class OffreDao implements IDao<Offre> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            offres = session.createQuery("from Offre").list();
+            offres = session.createQuery("from Offre", Offre.class).list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class OffreDao implements IDao<Offre> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            offre = (Offre) session.get(Offre.class, id);
+            offre = session.get(Offre.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {

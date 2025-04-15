@@ -6,13 +6,14 @@ package entities;
 
 import javax.persistence.Entity;
 
+
 @Entity
 public class Admin extends User {
 
     private String matricule;
 
     public Admin() {
-        super(); 
+        super();
     }
 
     public Admin(String nom, String email, String motDePasse, String matricule) {
@@ -28,3 +29,4 @@ public class Admin extends User {
         this.matricule = matricule;
     }
 }
+

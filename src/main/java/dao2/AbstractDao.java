@@ -13,6 +13,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import util.HibernateUtil;
+
 import java.util.List;
 
 public abstract class AbstractDao<T> implements IDao<T> {
@@ -28,14 +29,17 @@ public abstract class AbstractDao<T> implements IDao<T> {
         return executeTransaction(session -> session.save(o));
     }
 
+    @Override
     public boolean delete(T o) {
         return executeTransaction(session -> session.delete(o));
     }
 
+    @Override
     public boolean update(T o) {
         return executeTransaction(session -> session.update(o));
     }
 
+    @Override
     public List<T> findAll() {
         Session session = null;
         Transaction tx = null;
@@ -58,6 +62,7 @@ public abstract class AbstractDao<T> implements IDao<T> {
         return list;
     }
 
+    @Override
     public T findById(int id) {
         Session session = null;
         Transaction tx = null;

@@ -8,6 +8,7 @@ package dao2;
  *
  * @author ichou
  */
+
 import entities.Entreprise;
 
 public class EntrepriseDao extends AbstractDao<Entreprise> {
@@ -16,3 +17,4 @@ public class EntrepriseDao extends AbstractDao<Entreprise> {
         super(Entreprise.class);
     }
 }
+

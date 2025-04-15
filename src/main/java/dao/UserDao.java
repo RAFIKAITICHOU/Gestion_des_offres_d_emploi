@@ -94,7 +94,7 @@ public class UserDao implements IDao<User> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            users = session.createQuery("from User").list();
+            users = session.createQuery("from User", User.class).list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +116,7 @@ public class UserDao implements IDao<User> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            user = (User) session.get(User.class, id);
+            user = session.get(User.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {

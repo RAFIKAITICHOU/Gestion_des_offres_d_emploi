@@ -1,6 +1,6 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+     * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+     * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
 
@@ -9,11 +9,12 @@ package dao;
  * @author ichou
  */
 import entities.Entreprise;
-import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import util.HibernateUtil;
+
+import java.util.List;
 
 public class EntrepriseDao implements IDao<Entreprise> {
 
@@ -94,7 +95,7 @@ public class EntrepriseDao implements IDao<Entreprise> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            entreprises = session.createQuery("from Entreprise").list();
+            entreprises = session.createQuery("from Entreprise", Entreprise.class).list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -116,7 +117,7 @@ public class EntrepriseDao implements IDao<Entreprise> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            entreprise = (Entreprise) session.get(Entreprise.class, id);
+            entreprise = session.get(Entreprise.class, id);
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {

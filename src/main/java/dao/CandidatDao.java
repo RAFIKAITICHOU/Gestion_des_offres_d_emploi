@@ -8,12 +8,14 @@ package dao;
  *
  * @author ichou
  */
+
 import entities.Candidat;
-import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 import util.HibernateUtil;
+
+import java.util.List;
 
 public class CandidatDao implements IDao<Candidat> {
 
@@ -29,13 +31,9 @@ public class CandidatDao implements IDao<Candidat> {
             tx.commit();
             etat = true;
         } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
+            if (tx != null) tx.rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            if (session != null) session.close();
         }
         return etat;
     }
@@ -52,13 +50,9 @@ public class CandidatDao implements IDao<Candidat> {
             tx.commit();
             etat = true;
         } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
+            if (tx != null) tx.rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            if (session != null) session.close();
         }
         return etat;
     }
@@ -75,13 +69,9 @@ public class CandidatDao implements IDao<Candidat> {
             tx.commit();
             etat = true;
         } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
+            if (tx != null) tx.rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            if (session != null) session.close();
         }
         return etat;
     }
@@ -94,16 +84,12 @@ public class CandidatDao implements IDao<Candidat> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            candidats = session.createQuery("from Candidat").list();
+            candidats = session.createQuery("from Candidat", Candidat.class).list();
             tx.commit();
         } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
+            if (tx != null) tx.rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            if (session != null) session.close();
         }
         return candidats;
     }
@@ -116,16 +102,12 @@ public class CandidatDao implements IDao<Candidat> {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             tx = session.beginTransaction();
-            candidat = (Candidat) session.get(Candidat.class, id);
+            candidat = session.get(Candidat.class, id);
             tx.commit();
         } catch (HibernateException e) {
-            if (tx != null) {
-                tx.rollback();
-            }
+            if (tx != null) tx.rollback();
         } finally {
-            if (session != null) {
-                session.close();
-            }
+            if (session != null) session.close();
         }
         return candidat;
     }
