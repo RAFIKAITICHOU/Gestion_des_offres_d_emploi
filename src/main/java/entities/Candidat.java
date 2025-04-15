@@ -16,6 +16,7 @@ public class Candidat extends User {
     private String telephone;
 
     public Candidat() {
+        super();
     }
 
     public Candidat(String nom, String email, String motDePasse, String telephone) {
@@ -29,37 +30,5 @@ public class Candidat extends User {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getMotDePasse() {
-        return motDePasse;
-    }
-
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
     }
 }
