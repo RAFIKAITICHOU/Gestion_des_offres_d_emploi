@@ -6,6 +6,7 @@ dao2/AbstractDao$HibernateOperation.class
 dao2/AbstractDao.class
 services/IService.class
 controllers/EntrepriseController.class
+controllers/LoginController.class
 dao2/EntrepriseDao.class
 entities/Candidat.class
 dao2/CandidatDao.class
@@ -17,6 +18,7 @@ dao/CandidatDao.class
 test/TestCandidatCreation.class
 dao/UserDao.class
 services/OffreService.class
+controllers/LogoutController.class
 test/Test.class
 dao2/UserDao.class
 controllers/OffreController.class

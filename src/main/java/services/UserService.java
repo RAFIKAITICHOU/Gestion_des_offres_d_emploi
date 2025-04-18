@@ -32,9 +32,15 @@ public class UserService implements IService<User> {
     public List<User> findAll() {
         return dao.findAll();
     }
+    
+    public List<User> findByEmail(String email) {
+        return dao.findByEmail(email); 
+    }
 
     @Override
     public User findById(int id) {
         return dao.findById(id);
     }
+    
+    
 }

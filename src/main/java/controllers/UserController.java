@@ -5,10 +5,9 @@ import services.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "UserController", urlPatterns = {"/UserController"})
 public class UserController extends HttpServlet {
@@ -29,21 +28,26 @@ public class UserController extends HttpServlet {
             String id = request.getParameter("id");
 
             String nom = request.getParameter("nom");
+            String prenom = request.getParameter("prenom");
             String email = request.getParameter("email");
             String motDePasse = request.getParameter("motDePasse");
 
             if (id == null || id.isEmpty()) {
-                // CREATE
+                List<User> existing = service.findByEmail(email);
+                if (!existing.isEmpty()) {
+                    response.sendRedirect("users/register.jsp?error=1");
+                    return;
+                }
+
                 User user = new User(nom, email, motDePasse);
                 service.create(user);
+                response.sendRedirect("users/register.jsp?success=1");
             } else {
-                // UPDATE
                 User user = new User(nom, email, motDePasse);
                 user.setId(Integer.parseInt(id));
                 service.update(user);
+                response.sendRedirect("users/page.jsp");
             }
-
-            response.sendRedirect("users/page.jsp");
 
         } else if (op.equals("delete")) {
             String id = request.getParameter("id");
@@ -77,3 +81,4 @@ public class UserController extends HttpServlet {
         return "UserController Servlet";
     }
 }
+

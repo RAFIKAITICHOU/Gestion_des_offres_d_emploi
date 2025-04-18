@@ -15,7 +15,9 @@
 /Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/dao2/CandidatureDao.java
 /Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/services/CandidatureService.java
 /Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/dao/OffreDao.java
+/Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/controllers/LogoutController.java
 /Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/controllers/CandidatureController.java
+/Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/controllers/LoginController.java
 /Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/services/IService.java
 /Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/entities/Offre.java
 /Users/ichou/NetBeansProjects/Gestion_des_offres_d_emploi/src/main/java/entities/Candidature.java
