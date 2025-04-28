@@ -2,8 +2,10 @@ package services;
 
 import dao2.OffreDao;
 import entities.Offre;
+import java.util.HashMap;
 
 import java.util.List;
+import java.util.Map;
 
 public class OffreService implements IService<Offre> {
 
@@ -37,4 +39,17 @@ public class OffreService implements IService<Offre> {
     public Offre findById(int id) {
         return dao.findById(id);
     }
+
+    public Map<String, Integer> getNombreOffresParEntreprise() {
+        List<Offre> all = findAll();
+        Map<String, Integer> map = new HashMap<>();
+
+        for (Offre o : all) {
+            String nomEntreprise = o.getEntreprise().getNom();
+            map.put(nomEntreprise, map.getOrDefault(nomEntreprise, 0) + 1);
+        }
+
+        return map;
+    }
+
 }

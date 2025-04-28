@@ -9,14 +9,15 @@
 <%@page import="javax.servlet.http.HttpSession"%>
 
 <%
-    // Récupérer la session sans en créer une nouvelle
-    HttpSession session = request.getSession(false);
-    // Récupérer l'utilisateur à partir de la session
-    User user = (session != null) ? (User) session.getAttribute("currentUser") : null;
+     session = request.getSession(false);
+    User user = null;
 
-    // Si l'utilisateur n'est pas connecté, rediriger vers la page de connexion
+    if (session != null) {
+        user = (User) session.getAttribute("currentUser");
+    }
+
     if (user == null) {
-        response.sendRedirect("../users/login.jsp"); // Redirection vers la page de connexion
+        response.sendRedirect(request.getContextPath() + "/users/login.jsp");
         return;
     }
 %>
@@ -68,8 +69,7 @@
     <div class="welcome-box">
         <h2>Bienvenue, <%= user.getEmail() %> 👋</h2>
         <p>Vous êtes connecté avec succès.</p>
-        <a href="../LogoutController" class="logout-link">Se déconnecter</a>
+        <a href="<%= request.getContextPath() %>/LogoutController" class="logout-link">Se déconnecter</a>
     </div>
 </body>
 </html>
-

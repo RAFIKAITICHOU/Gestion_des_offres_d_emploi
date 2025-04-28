@@ -23,6 +23,7 @@ test/Test.class
 dao2/UserDao.class
 controllers/OffreController.class
 services/CandidatureService.class
+controllers/StatistiquesController.class
 services/CandidatService.class
 controllers/CandidatureController.class
 services/EntrepriseService.class
