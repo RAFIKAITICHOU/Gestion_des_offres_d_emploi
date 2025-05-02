@@ -91,7 +91,8 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 </p>
 
 ## 🧪 8. Démo video :
-
 https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/issues/1#issue-3036531624
+
+https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/D%C3%A9mo%20video/D%C3%A9mo%20video.mp4
 
 
