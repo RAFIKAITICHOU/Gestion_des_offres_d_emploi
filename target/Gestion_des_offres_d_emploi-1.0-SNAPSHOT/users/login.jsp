@@ -76,7 +76,7 @@
                 </form>
 
                 <div class="mt-4 text-center">
-                    <span class="text-muted">Vous n'avez pas de compte ?</span>
+                    <span class="text-muted">Pas encore de compte  ?</span>
                     <a href="${pageContext.request.contextPath}/users/register.jsp" class="text-decoration-none">S'inscrire</a>
                 </div>
             </div>
