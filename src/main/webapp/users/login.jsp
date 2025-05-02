@@ -3,6 +3,24 @@
     Created on : 17 avr. 2025, 13:57:15
     Author     : ichou
 --%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="users.jsp">Accueil</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="offres.jsp">Offres</a></li>
+                <li class="nav-item"><a class="nav-link" href="addOffre.jsp">Nouvelle Offre</a></li>
+                <li class="nav-item"><a class="nav-link" href="candidatures.jsp">Candidatures</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.jsp">Profil</a></li>
+                <li class="nav-item"><a class="nav-link" href="statistiques.jsp">Statistiques</a></li>
+                <li class="nav-item"><a class="nav-link text-warning" href="LogoutController">Déconnexion</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="entities.User"%>
@@ -15,98 +33,60 @@
         return;
     }
 %>
-
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <style>
-        * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f5f5f5; display: flex; justify-content: center;
-            align-items: center; min-height: 100vh; padding: 20px;
-        }
-        .login-container {
-            background-color: white; border-radius: 10px; padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px;
-        }
-        .login-header { text-align: center; margin-bottom: 30px; }
-        .login-header h1 { font-size: 24px; color: #333; margin-bottom: 10px; }
-        .login-header p { color: #666; font-size: 14px; }
-        .login-header::after {
-            content: ''; width: 50px; height: 3px; background-color: #4a6fdc;
-            display: block; margin: 15px auto 0;
-        }
-        form, table { width: 100%; }
-        td { padding: 8px 0; }
-        label { margin-bottom: 6px; font-weight: 500; color: #555; font-size: 15px; }
-        input[type="email"], input[type="password"] {
-            width: 100%; padding: 12px 15px; border: 1px solid #ddd;
-            border-radius: 6px; font-size: 16px; margin-bottom: 15px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        input[type="email"]:focus, input[type="password"]:focus {
-            border-color: #4a6fdc; box-shadow: 0 0 0 3px rgba(74,111,220,0.2); outline: none;
-        }
-        input[type="submit"] {
-            background-color: #4a6fdc; color: white; border: none; border-radius: 6px;
-            padding: 14px 20px; font-size: 16px; cursor: pointer; width: 100%;
-            transition: background-color 0.3s; margin-top: 10px;
-        }
-        input[type="submit"]:hover { background-color: #3a5fc8; }
-        .register-link { text-align: center; margin-top: 20px; font-size: 14px; color: #666; }
-        .register-link a { color: #4a6fdc; text-decoration: none; }
-        .register-link a:hover { text-decoration: underline; }
-        .error-message { color: red; text-align: center; margin-bottom: 15px; font-size: 14px; }
-        @media (max-width:480px) { .login-container { padding: 20px; } }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <div class="login-header">
-            <h1>Connexion</h1>
-            <p>Veuillez vous connecter pour accéder à votre compte</p>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Connexion</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-light d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+
+        <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-3">Connexion</h3>
+                <p class="text-center text-muted">Veuillez vous connecter pour accéder à votre compte</p>
+
+                <%
+                    String error = (String) request.getAttribute("errorMessage");
+                    if (error != null) {
+                %>
+                <div class="alert alert-danger text-center py-2">
+                    <%= error%>
+                </div>
+                <%
+                    }
+                %>
+
+                <form method="POST" action="${pageContext.request.contextPath}/LoginController">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email :</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Entrez votre email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mdp" class="form-label">Mot de passe :</label>
+                        <input type="password" class="form-control" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Se connecter</button>
+                    </div>
+                </form>
+
+                <div class="mt-4 text-center">
+                    <span class="text-muted">Vous n'avez pas de compte ?</span>
+                    <a href="${pageContext.request.contextPath}/users/register.jsp" class="text-decoration-none">S'inscrire</a>
+                </div>
+            </div>
         </div>
 
-        <% 
-            String error = (String) request.getAttribute("errorMessage");
-            if (error != null) {
-        %>
-            <div class="error-message"><%= error %></div>
-        <%
-            }
-        %>
 
-        <form method="POST" action="${pageContext.request.contextPath}/LoginController">
-            <table>
-                <tr>
-                    <td>
-                        <label for="email">Email :</label>
-                        <input type="email" id="email" name="email" placeholder="Entrez votre email" required/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="mdp">Mot de passe :</label>
-                        <input type="password" id="mdp" name="mdp" placeholder="Entrez votre mot de passe" required/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="Se connecter"/>
-                    </td>
-                </tr>
-            </table>
-        </form>
-
-        <div class="register-link">
-            Vous n'avez pas de compte ? <a href="${pageContext.request.contextPath}/users/register.jsp">S'inscrire</a>
-        </div>
-    </div>
-</body>
+        <footer class="bg-primary text-white text-center py-3 mt-5">
+            <div class="container">
+                <small>&copy; 2025 ichou_emploi • Tous droits réservés</small>
+            </div>
+        </footer>
+    </body>
 </html>

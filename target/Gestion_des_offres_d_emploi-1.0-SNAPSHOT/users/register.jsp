@@ -3,209 +3,89 @@
     Created on : 17 avr. 2025, 14:09:23
     Author     : ichou
 --%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="users.jsp">Accueil</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="offres.jsp">Offres</a></li>
+                <li class="nav-item"><a class="nav-link" href="addOffre.jsp">Nouvelle Offre</a></li>
+                <li class="nav-item"><a class="nav-link" href="candidatures.jsp">Candidatures</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile.jsp">Profil</a></li>
+                <li class="nav-item"><a class="nav-link" href="statistiques.jsp">Statistiques</a></li>
+                <li class="nav-item"><a class="nav-link text-warning" href="LogoutController">Déconnexion</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Créer un compte</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Styles identiques à ton exemple */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Créer un compte</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-light d-flex align-items-center justify-content-center" style="min-height: 100vh;">
 
-        body {
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+        <div class="card shadow p-4" style="width: 100%; max-width: 500px;">
+            <h3 class="card-title text-center mb-3">Créer un compte</h3>
 
-        fieldset {
-            border: none;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 100%;
-            max-width: 500px;
-        }
+            <%
+                String success = request.getParameter("success");
+                String error = request.getParameter("error");
+                if ("1".equals(success)) {
+            %>
+            <div class="alert alert-success text-center py-2">Inscription réussie !</div>
+            <% } else if ("1".equals(error)) { %>
+            <div class="alert alert-danger text-center py-2">Une erreur est survenue lors de l'inscription.</div>
+            <% }%>
 
-        legend {
-            font-size: 24px;
-            font-weight: 600;
-            color: #333;
-            padding: 0 10px;
-            margin-bottom: 20px;
-            position: relative;
-        }
+            <form method="POST" action="../UserController">
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Nom :</label>
+                    <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom" required>
+                </div>
 
-        legend::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #4a6fdc;
-            margin-top: 8px;
-        }
+                <div class="mb-3">
+                    <label for="prenom" class="form-label">Prénom :</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+                </div>
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email :</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Entrez votre email" required>
+                </div>
 
-        td {
-            padding: 12px 0;
-            vertical-align: top;
-        }
+                <div class="mb-4">
+                    <label for="mdp" class="form-label">Mot de passe :</label>
+                    <input type="password" class="form-control" id="mdp" name="motDePasse" placeholder="Entrez votre mot de passe" required>
+                </div>
 
-        td:first-child {
-            width: 120px;
-            font-weight: 500;
-            color: #555;
-            padding-top: 20px;
-        }
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </div>
+            </form>
 
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        input[type="text"]:focus, input[type="password"]:focus {
-            border-color: #4a6fdc;
-            box-shadow: 0 0 0 3px rgba(74, 111, 220, 0.2);
-            outline: none;
-        }
-
-        input[type="submit"] {
-            background-color: #4a6fdc;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 10px;
-            width: 100%;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #3a5fc8;
-        }
-
-        .login-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .login-link a {
-            color: #4a6fdc;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .login-link a:hover {
-            text-decoration: underline;
-        }
-
-        .message {
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .message.success {
-            color: green;
-        }
-
-        .message.error {
-            color: red;
-        }
-
-        @media (max-width: 600px) {
-            fieldset {
-                padding: 20px;
-            }
-
-            td:first-child {
-                display: block;
-                width: 100%;
-                padding-top: 0;
-                padding-bottom: 5px;
-            }
-
-            td {
-                display: block;
-                padding: 5px 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <fieldset>
-        <legend>Créer un compte</legend>
-
-        <%-- succès ou d’erreur --%>
-        <%
-            String success = request.getParameter("success");
-            String error = request.getParameter("error");
-            if ("1".equals(success)) {
-        %>
-            <div class="message success">Inscription réussie !</div>
-        <% } else if ("1".equals(error)) { %>
-            <div class="message error">Une erreur est survenue lors de l'inscription.</div>
-        <% } %>
-
-        <form method="POST" action="../UserController">
-            <table>
-                <tr>
-                    <td><label for="nom">Nom :</label></td>
-                    <td><input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required /></td>
-                </tr>
-
-                <tr>
-                    <td><label for="prenom">Prénom :</label></td>
-                    <td><input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required /></td>
-                </tr>
-
-                <tr>
-                    <td><label for="email">Email :</label></td>
-                    <td><input type="text" id="email" name="email" placeholder="Entrez votre email" required /></td>
-                </tr>
-
-                <tr>
-                    <td><label for="mdp">Mot de passe :</label></td>
-                    <td><input type="password" id="mdp" name="motDePasse" placeholder="Entrez votre mot de passe" required /></td>
-                </tr>
-
-                <tr>
-                    <td></td>
-                    <td><input type="submit" value="S'inscrire" /></td>
-                </tr>
-            </table>
-        </form>
-
-        <div class="login-link">
-            Déjà inscrit ? <a href="login.jsp">Se connecter</a>
+            <div class="text-center mt-3">
+                <small class="text-muted">Déjà inscrit ?</small>
+                <a href="login.jsp" class="text-decoration-none">Se connecter</a>
+            </div>
         </div>
-    </fieldset>
-</body>
+
+
+        <footer class="bg-primary text-white text-center py-3 mt-5">
+            <div class="container">
+                <small>&copy; 2025 ichou_emploi • Tous droits réservés</small>
+            </div>
+        </footer>
+    </body>
 </html>
 
 
