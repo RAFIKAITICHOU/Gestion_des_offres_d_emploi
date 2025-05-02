@@ -38,11 +38,13 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 - **MySQL** – Système de gestion de base de données relationnelle pour stocker les données (offres, utilisateurs, candidatures, entreprises...).
 
 
+
 ## 🧩 5. Diagramme de classes (UML) :
 
 <p align="center">
   <img src="Images/class%20dig.png" alt=" " width="500">
 </p>
+
 ## 🗺️ 6.  Modèle conceptuel de la base généré :
 
 <p align="center">
