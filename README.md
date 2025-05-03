@@ -100,5 +100,10 @@ https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/issues/1
 https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/D%C3%A9mo%20video/D%C3%A9mo%20video.mp4
 [Démonstration](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/D%C3%A9mo%20video/D%C3%A9mo%20video.mp4)
 
+## 🤝 Contributeurs
+AIT ICHOU RAFIK
+
+Encadrant: <a href="https://www.linkedin.com/in/mohamed-lachgar-33394b15/" target="_blank">**LACHGAR Mohamed**</a>
+
 
 
