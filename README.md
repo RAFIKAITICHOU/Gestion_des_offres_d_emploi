@@ -91,14 +91,9 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 </p>
 
 ## 🧪 8. Démo video :
-[Démonstration](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/issues/1#issue-3036531624)
 
-https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/issues/1#issue-3036531624
-https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/issues/1
+https://github.com/user-attachments/assets/cb0e484a-1470-4475-baa3-79bab5d2bbef
 
-
-https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/D%C3%A9mo%20video/D%C3%A9mo%20video.mp4
-[Démonstration](https://github.com/RAFIKAITICHOU/Gestion_des_offres_d_emploi/blob/main/D%C3%A9mo%20video/D%C3%A9mo%20video.mp4)
 
 ## 🤝 Contributeurs
 AIT ICHOU RAFIK
