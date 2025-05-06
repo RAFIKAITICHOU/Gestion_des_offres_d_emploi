@@ -92,6 +92,8 @@ Ce projet répond au besoin de digitaliser le recrutement, d’automatiser les c
 
 ## 🧪 8. Démo video :
 
+https://github.com/user-attachments/assets/b34e23e1-487d-4807-b40b-949ea7f3d381
+
 https://github.com/user-attachments/assets/cb0e484a-1470-4475-baa3-79bab5d2bbef
 
 
